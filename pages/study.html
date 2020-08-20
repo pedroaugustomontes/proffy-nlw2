@@ -14,28 +14,94 @@
 <body id="page-study">
 
   <div id="container">
-    <div class="logo-container">
-      <img src="/images/logo.svg" alt="Logo Proffy">
-      <h2>Sua plataforma de estudos online</h2>
-    </div>
+    <header class="page-header">
+      <div class="top-bar-container">
+        <a href="/">
+          <img src="/images/icons/back.svg" alt="Voltar">
+        </a>
+        <img src="/images/logo.svg" alt="Proffy">
+      </div>
 
-    <img src="/images/study.svg" alt="Plataforma de Estudos" class="hero-image">
+      <div class="header-content">
+        <strong>Esses são os Proffys disponíveis</strong>
+        <form id="search-teachers">
+          <div class="select-block">
+            <label for="subject">Matéria</label>
+            <select name="subject" id="subject">
+              <option value="" disabled="" hidden="">Selecione uma opção</option>
+              <option value="1">Artes</option>
+              <option value="2">Biologia</option>
+              <option value="3">Ciências</option>
+              <option value="4">Educação física</option>
+              <option value="5">Física</option>
+              <option value="6">Geografia</option>
+              <option value="7">História</option>
+              <option value="8">Matemática</option>
+              <option value="9">Português</option>
+              <option value="10">Química</option>
+            </select>
+          </div>
+          <div class="select-block">
+            <label for="weekday">Dia da semana</label>
+            <select name="weekday" id="weekday">
+              <option value="" disabled="" hidden="">Selecione uma opção</option>
+              <option value="0">Domingo</option>
+              <option value="1">Segunda-feira</option>
+              <option value="2">Terça-feira</option>
+              <option value="3">Quarta-feira</option>
+              <option value="4">Quinta-feira</option>
+              <option value="5">Sexta-feira</option>
+              <option value="6">Sábado</option>
+            </select>
+          </div>
+          <div class="input-block">
+            <label for="time">Hora</label>
+            <input name="time" id="time" type="time">
+          </div>
+          <button type="submit">Filtrar</button>
+        </form>
+      </div>
+    </header>
 
-    <div class="buttons-container">
-      <a href="/study.html" class="study">
-        <img src="/images/icons/study.svg" alt="Estudar">
-        Estudar
-      </a>
-      <a href="/study.html" class="give-classes">
-        <img src="/images/icons/give-classes.svg" alt="Dar Aulas">
-        Dar aulas
-      </a>
-    </div>
+    <main>
+      <article class="teacher-item">
+        <header>
+          <img src="https://avatars0.githubusercontent.com/u/29560062?s=460&u=c7f2fc21e628ca7c34554aa74ef742654dcfe3ee&amp;v=4" alt="Diego Fernandes">
+          <div>
+            <strong>Pedro Montes</strong>
+            <span>Química</span>
+          </div>
+        </header>
 
-    <p class="total-connections">
-      Total de 200 conexões já realizadas
-      <img src="/images/icons/purple-heart.svg" alt="Coração Roxo">
-    </p>
+        <p>Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado pela ZUP e desenvolvimento web, adora jogar e já tentou ser um gamer hardcore, mas sua mãe não deixou. Mais de 200.000 pessoas já passaram por uma das minhas jogatinas.</p>
+
+        <footer>
+          <p>Preço/hora<strong>R$ 20,00</strong></p>
+          <button type="button">
+            <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
+          </button>
+        </footer>
+      </article>
+
+      <article class="teacher-item">
+        <header>
+          <img src="https://avatars0.githubusercontent.com/u/29560062?s=460&u=c7f2fc21e628ca7c34554aa74ef742654dcfe3ee&amp;v=4" alt="Diego Fernandes">
+          <div>
+            <strong>Pedro Montes</strong>
+            <span>Química</span>
+          </div>
+        </header>
+
+        <p>Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado pela ZUP e desenvolvimento web, adora jogar e já tentou ser um gamer hardcore, mas sua mãe não deixou. Mais de 200.000 pessoas já passaram por uma das minhas jogatinas.</p>
+
+        <footer>
+          <p>Preço/hora <strong>R$ 20,00</strong></p>
+          <button type="button">
+            <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
+          </button>
+        </footer>
+      </article>
+    </main>
   </div>
 
 </body>
