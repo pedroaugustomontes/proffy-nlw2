@@ -37,29 +37,29 @@
     </header>
 
     <main>
-      <form action="" id="create-class">
+      <form action="" id="create-class" method="">
         <fieldset>
 
           <legend>Seus dados</legend>
 
           <div class="input-block">
             <label for="name">Nome completo</label>
-            <input type="name" id="name" required>
+            <input name="name" id="name" required>
           </div>
 
           <div class="input-block">
             <label for="avatar">Link da sua foto <small>(comece com https://)</small></label>
-            <input type="avatar" id="avatar" type="url" required>
+            <input name="avatar" id="avatar" type="url" required>
           </div>
 
           <div class="input-block">
             <label for="whatsapp">Whatsapp <small>(somente números)</small></label>
-            <input type="whatsapp" id="whatsapp" type="number" required>
+            <input name="whatsapp" id="whatsapp" type="number" required>
           </div>
 
           <div class="textarea-block">
             <label for="bio">Biografia</label>
-            <textarea type="bio" id="bio" required></textarea>
+            <textarea name="bio" id="bio" required></textarea>
           </div>
 
         </fieldset>
@@ -71,16 +71,13 @@
             <label for="subject">Matéria</label>
             <select name="subject" id="subject" required>
               <option value="">Selecione uma opção</option>
-              <option value="1">Artes</option>
-              <option value="2">Biologia</option>
-              <option value="3">Ciências</option>
-              <option value="4">Educação física</option>
-              <option value="5">Física</option>
-              <option value="6">Geografia</option>
-              <option value="7">História</option>
-              <option value="8">Matemática</option>
-              <option value="9">Português</option>
-              <option value="10">Química</option>
+
+              {%for subject in subjects %}
+              <option value="{{loop.index}}">
+                {{subject}}
+              </option>
+              {%endfor%}
+
             </select>
           </div>
 
@@ -89,7 +86,7 @@
               Custo da sua hora/aula
               <small>(R$)</small>
             </label>
-            <input type="cost" id="cost" type="number" required>
+            <input name="cost" type="cost" id="cost" type="number" required>
           </div>
         </fieldset>
 
@@ -104,13 +101,13 @@
               <label for="weekday">Dia da semana</label>
               <select name="weekday[]" id="weekday" required>
                 <option value="">Selecione uma opção</option>
-                <option value="1">Domingo</option>
-                <option value="2">Segunda-feira</option>
-                <option value="3">Terça-feira</option>
-                <option value="4">Quarta-feira</option>
-                <option value="5">Quinta-feira</option>
-                <option value="6">Sexta-feira</option>
-                <option value="7">Sábado</option>
+                {%for weekday in weekdays%}
+
+                <option value="{{loop.index0}}">
+                  {{weekday}}
+                </option>
+
+                {%endfor%}
               </select>
             </div>
 

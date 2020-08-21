@@ -2,7 +2,7 @@
 const proffys = [
   {
     name: "Pedro Montes",
-    avatar: "https://avatars0.githubusercontent.com/u/29560062?s=460&u=c7f2fc21e628ca7c34554aa74ef742654dcfe3ee&amp;v=4",
+    avatar: "https://media-exp1.licdn.com/dms/image/C4D03AQHPaUXVbJym_A/profile-displayphoto-shrink_200_200/0?e=1603324800&v=beta&t=Rx3mu_BYNkmwPmGHbpaGPQUUtLP6xxar3ziRh5pKIyw",
     whatsapp: "34996838852",
     bio: "Entusiasta das melhores tecnologias de química avançada. Apaixonado pela ZUP e desenvolvimento web, adora jogar e já tentou ser um gamer hardcore, mas sua mãe não deixou. Mais de 200.000 pessoas já passaram por uma das minhas jogatinas.",
     subject: "Química",
@@ -13,14 +13,14 @@ const proffys = [
   },
   {
     name: "Montes Pedro",
-    avatar: "https://avatars0.githubusercontent.com/u/29560062?s=460&u=c7f2fc21e628ca7c34554aa74ef742654dcfe3ee&amp;v=4",
+    avatar: "https://avatars0.githubusercontent.com/u/29560062?s=400&u=de8276f88e76cf89fa99644d6fb9ba3de6c417ee&v=4",
     whatsapp: "34996838852",
-    bio: "Entusiasta das melhores tecnologias de biologia avançada.",
-    subject: "Biologia",
-    cost: "20",
-    weekday: [5],
-    time_from: [720],
-    time_to: [1220]
+    bio: "Hackerman brabo invadindo os sistemas da NASA usando ondas mentais de Buda.",
+    subject: "Matemática",
+    cost: "999",
+    weekday: [1],
+    time_from: [620],
+    time_to: [1120]
   }
 ]
 
@@ -48,6 +48,11 @@ const weekdays = [
 ]
 
 // Funcionalidades
+function getSubject(subjectNumber) {
+  const position = +subjectNumber - 1
+  return subjects[position]
+}
+
 function pageLanding(req, res) {
   return res.render("index.html")
 }
@@ -56,7 +61,18 @@ function pageStudy(req, res) {
   return res.render("study.html", { proffys, filters, subjects, weekdays })
 }
 function pageGiveClasses(req, res) {
-  return res.render("give-classes.html")
+  const data = req.query
+  const isNotEmpty = Object.keys(data).length != 0
+
+  // se tiver dados (data)
+  if (isNotEmpty) {
+    data.subject = getSubject(data.subject)
+    //adicionar dados a lista de proffys
+    proffys.push(data)
+    return res.redirect("/study")
+  }
+  // se não, mostrar a página
+  return res.render("give-classes.html", { subjects, weekdays })
 }
 
 // servidor
