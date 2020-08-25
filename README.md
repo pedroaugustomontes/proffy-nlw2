@@ -37,4 +37,25 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 
 ---
 
+## ⌨ Como executar o projeto
+
+```bash
+# Clonar o repositório
+git clone https://github.com/MrPMontes/proffy-nlw2
+
+# Entrar no diretório
+cd proffy-discovery
+
+# Baixar as dependências
+npm install
+
+# Executar o servidor
+npm run dev
+```
+
+Feito isso, abra o seu navegador e acesse `http://localhost:5500/`
+
+---
+
+
 Feito com ♥ by Pedro Augusto Montes com a ajuda do Maik Brito da Rocketseat :wave: [Participe da comunidade Rocketseat!](https://discordapp.com/invite/gCRAFhc)
