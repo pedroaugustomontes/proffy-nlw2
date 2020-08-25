@@ -43,11 +43,11 @@
   color: var(--color-title-in-primary);
 }
 
-#seach-teachers {
+#search-teachers {
   margin-top: 3.2rem;
 }
-#seach-teachers label {
-  color: var(--color-text-in-primary);
+#search-teachers div label {
+  color: var(--color-text-in-primary) !important;
 }
 
 #search-teachers button {
@@ -161,6 +161,12 @@
   background: var(--color-secundary-dark);
 }
 
+#page-study main .no-results {
+  max-width: 300px;
+  margin: 12rem auto;
+  text-align: center;
+}
+
 @media (min-width: 700px) {
   #page-study #container {
     max-width: 100vw;
@@ -193,7 +199,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     position: absolute;
-    bottom: -10px;
+    bottom: -25px;
   }
 
   #page-study main {

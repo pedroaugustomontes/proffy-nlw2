@@ -69,6 +69,12 @@
 
     <main>
 
+      {% if proffys == "" %}
+
+      <p class="no-results">Nenhum professor encontrado com a sua pesquisa.</p>
+
+      {% else %}
+
       {%for proffy in proffys %}
       <article class="teacher-item">
         <header>
@@ -89,6 +95,8 @@
         </footer>
       </article>
       {%endfor%}
+
+      {% endif %}
       <!-- <article class="teacher-item">
         <header>
           <img src="https://avatars0.githubusercontent.com/u/29560062?s=460&u=c7f2fc21e628ca7c34554aa74ef742654dcfe3ee&amp;v=4" alt="Diego Fernandes">
