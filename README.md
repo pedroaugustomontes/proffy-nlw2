@@ -50,7 +50,7 @@ cd proffy-discovery
 npm install
 
 # Executar o servidor
-npm run dev
+node src/server.js
 ```
 
 Feito isso, abra o seu navegador e acesse `http://localhost:5500/`
