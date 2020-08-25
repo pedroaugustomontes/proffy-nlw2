@@ -1,14 +1,13 @@
 const Database = require('./database/db')
 
 const { subjects, weekdays, getSubject, convertHoursToMinutes } = require('./utils/format')
-const { query } = require('express')
 
 function pageLanding(req, res) {
   return res.render("index.html")
 }
 
 async function pageStudy(req, res) {
-  const filters = req.body
+  const filters = req.query
 
   if (!filters.subject || !filters.weekday || !filters.time) {
     return res.render("study.html", { filters, subjects, weekdays })
@@ -36,6 +35,11 @@ async function pageStudy(req, res) {
   try {
     const db = await Database;
     const proffys = await db.all(query)
+
+    proffys.map((proffy) => {
+      proffy.subject = getSubject(proffy.subject)
+    })
+
     return res.render('study.html', { proffys, subjects, filters, weekdays })
 
   } catch (error) {
@@ -59,7 +63,7 @@ async function saveClasses(req, res) {
 
   const classValue = {
     subject: req.body.subject,
-    const: req.body.const,
+    cost: req.body.cost
   }
 
   const classScheduleValues = req.body.weekday.map((weekday, index) => {

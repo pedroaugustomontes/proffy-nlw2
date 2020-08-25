@@ -88,7 +88,7 @@
         <p>{{proffy.bio}}</p>
 
         <footer>
-          <p>Preço/hora<strong>{{proffy.cost}}</strong></p>
+          <p>Preço/hora<strong><small>R$</small>{{proffy.cost}}</strong></p>
           <a href="https://api.whatsapp.com/send?l=pt_BR&phone=55{{proffy.whatsapp}}&text=Tenho interesse na sua aula de {{proffy.subject}} {{proffy.name}}" class="button" target="_blank">
             <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
           </a>
@@ -97,24 +97,6 @@
       {%endfor%}
 
       {% endif %}
-      <!-- <article class="teacher-item">
-        <header>
-          <img src="https://avatars0.githubusercontent.com/u/29560062?s=460&u=c7f2fc21e628ca7c34554aa74ef742654dcfe3ee&amp;v=4" alt="Diego Fernandes">
-          <div>
-            <strong>Pedro Montes</strong>
-            <span>Química</span>
-          </div>
-        </header>
-
-        <p>Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado pela ZUP e desenvolvimento web, adora jogar e já tentou ser um gamer hardcore, mas sua mãe não deixou. Mais de 200.000 pessoas já passaram por uma das minhas jogatinas.</p>
-
-        <footer>
-          <p>Preço/hora <strong>R$ 20,00</strong></p>
-          <button type="button">
-            <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
-          </button>
-        </footer>
-      </article> -->
     </main>
   </div>
 
